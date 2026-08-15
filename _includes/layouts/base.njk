@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="{{ metadata.language }}">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="color-scheme" content="light dark">
+		<meta name="theme-color" content="#FFFAF6" media="(prefers-color-scheme: light)">
+		<meta name="theme-color" content="#101C27" media="(prefers-color-scheme: dark)">
+		<title>{{ title or metadata.title }}</title>
+		<meta name="description" content="{{ description or metadata.description }}">
+		{% if noindex %}
+		<meta name="robots" content="noindex">
+		{% else %}
+		<link rel="canonical" href="{{ metadata.url }}">
+		<meta property="og:title" content="{{ title or metadata.title }}">
+		<meta property="og:type" content="website">
+		<meta property="og:description" content="{{ description or metadata.description }}">
+		<meta property="og:url" content="{{ metadata.url }}">
+		<meta property="og:locale" content="en_US">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="{{ title or metadata.title }}">
+		<meta name="twitter:description" content="{{ description or metadata.description }}">
+		{% endif %}
+
+		<link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+		<link rel="shortcut icon" href="/img/favicon/favicon.ico">
+
+		<link rel="preload" href="/fonts/Inter-roman.var.woff2" as="font" type="font/woff2" crossorigin>
+		<link rel="stylesheet" href="/css/index.css">
+	</head>
+	<body>
+		<a href="#skip" class="skip-link">Skip to main content</a>
+
+		<header>
+			<a href="https://andypbrowne.com/" class="home-link">Andy Garber-Browne</a>
+		</header>
+
+		<main id="skip">
+			{{ content | safe }}
+		</main>
+
+		<footer>
+			<p>Andy Garber-Browne · NY Metro · <a href="https://andypbrowne.com/">andypbrowne.com</a></p>
+		</footer>
+	</body>
+</html>

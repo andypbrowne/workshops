@@ -1,0 +1,20 @@
+{
+	"name": "workshops",
+	"version": "1.0.0",
+	"description": "Decision workshops — Andy Garber-Browne",
+	"scripts": {
+		"build": "npx @11ty/eleventy",
+		"start": "npx @11ty/eleventy --serve --quiet"
+	},
+	"author": {
+		"name": "Andrew Garber-Browne",
+		"url": "https://andypbrowne.com/about/"
+	},
+	"license": "MIT",
+	"engines": {
+		"node": ">=14"
+	},
+	"devDependencies": {
+		"@11ty/eleventy": "^2.0.1"
+	}
+}
