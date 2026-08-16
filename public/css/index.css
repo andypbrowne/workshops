@@ -190,6 +190,10 @@ header {
 }
 
 .home-link {
+	display: inline-flex;
+	align-items: center;
+	min-height: 44px;
+	min-width: 44px;
 	font-size: 1em;
 	font-weight: 700;
 }
@@ -213,7 +217,8 @@ h3 {
 	text-wrap: balance;
 }
 
-h1 {
+h1,
+.step-when {
 	font-family: var(--font-family);
 	font-size: var(--font-size-md);
 	font-weight: 700;
@@ -221,7 +226,7 @@ h1 {
 	font-variation-settings: "wght" 700;
 	font-variant-caps: all-small-caps;
 	letter-spacing: 0.08rem;
-	margin: 0 0 0.8rem;
+	margin: 0 0 var(--space-1) 0;
 }
 
 .lede {
@@ -244,25 +249,40 @@ h2 {
 }
 
 .gradient-text {
-	background: linear-gradient(to right, #3668cc 50%, #7500ed 100%);
-	background-image: linear-gradient(
-		to right in oklab,
-		oklch(53.78% 0.2742 262.342) 0%,
-		oklch(53.78% 0.2742 262.342) 31% 31%,
-		oklch(53.78% 0.3063 293.163) 100%
-	);
-	background-clip: text;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: rgba(0, 0, 0, 0.15);
+	color: var(--text-color);
 	box-decoration-break: clone;
 	-webkit-box-decoration-break: clone;
 	padding-inline-end: 0.15em;
 	margin-inline-end: -0.15em;
 }
 
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+	.gradient-text {
+		background: linear-gradient(to right, #3668cc 50%, #7500ed 100%);
+		background-image: linear-gradient(
+			to right in oklab,
+			oklch(53.78% 0.2742 262.342) 0%,
+			oklch(53.78% 0.2742 262.342) 31% 31%,
+			oklch(53.78% 0.3063 293.163) 100%
+		);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		color: transparent;
+	}
+}
+
+@media (forced-colors: active) {
+	.gradient-text {
+		background: none;
+		-webkit-text-fill-color: unset;
+		color: CanvasText;
+	}
+}
+
 h3 {
 	font-family: var(--font-family);
-	font-size: var(--font-size-base);
+	font-size: var(--font-size-md);
 	font-weight: 700;
 	font-variation-settings: "wght" 700;
 	margin: 0 0 0.6rem;
@@ -319,17 +339,12 @@ a[href]:active {
 	border-radius: var(--border-radius);
 }
 
-.step-when {
-	font-size: var(--font-size-md);
-	font-variant-caps: all-small-caps;
-	letter-spacing: 0.08rem;
-	font-weight: var(--font-weight-bold);
-	margin: 0 0 0.5rem;
-}
-
 .steps h3 {
 	font-weight: 600;
 	font-variation-settings: "wght" 650;
+	line-height: 1.4;
+	text-wrap: pretty;
+	margin-bottom: var(--space-2);
 }
 
 .steps p:last-child {
@@ -345,7 +360,7 @@ a[href]:active {
 	margin: 1.6rem 0 0;
 }
 
-.fit h2 {
+.fit h3 {
 	margin: 0 0 0.8rem;
 	font-size: var(--font-size-md);
 	font-weight: 700;
@@ -538,4 +553,11 @@ footer {
 
 footer p {
 	margin: 0;
+}
+
+footer a {
+	display: inline-flex;
+	align-items: center;
+	min-height: 44px;
+	min-width: 44px;
 }
