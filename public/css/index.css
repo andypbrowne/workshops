@@ -57,8 +57,21 @@
 	--color-midnight-20: #e3e4e5;
 	--color-midnight-60: #1a4876;
 	--color-midnight-80: #1b4167;
-	--color-base-bg: #fffaf6;
-	--color-aside: #fff5f0;
+
+	/* Almond. Step 5 is the crayon; 1–4 tints (mix with white), 6–9 shades (mix with black). */
+	--swatch: #efdecd;
+	--swatch-1: color-mix(in oklab, var(--swatch) 20%, white);
+	--swatch-2: color-mix(in oklab, var(--swatch) 40%, white);
+	--swatch-3: color-mix(in oklab, var(--swatch) 60%, white);
+	--swatch-4: color-mix(in oklab, var(--swatch) 80%, white);
+	--swatch-5: var(--swatch);
+	--swatch-6: color-mix(in oklab, var(--swatch) 80%, black);
+	--swatch-7: color-mix(in oklab, var(--swatch) 60%, black);
+	--swatch-8: color-mix(in oklab, var(--swatch) 40%, black);
+	--swatch-9: color-mix(in oklab, var(--swatch) 20%, black);
+
+	--color-base-bg: var(--swatch-1);
+	--color-aside: var(--swatch-3);
 
 	--text-color: var(--color-midnight-80);
 	--text-color-link: #0000ee;
@@ -73,8 +86,8 @@
 		--color-midnight-20: #152434;
 		--color-midnight-60: #7792a9;
 		--color-midnight-80: #e3e4e5;
-		--color-aside: #152434;
-		--color-base-bg: #101c27;
+		--color-aside: var(--swatch-8);
+		--color-base-bg: var(--swatch-9);
 		--text-color-link: #1493fb;
 		--text-color-link-active: #6969f7;
 		--text-color-link-visited: #a6a6f8;
@@ -181,7 +194,7 @@ h3 {
 
 h1 {
 	font-family: var(--font-family);
-	font-size: var(--font-size-sm);
+	font-size: var(--font-size-md);
 	font-weight: 700;
 	font-style: normal;
 	font-variation-settings: "wght" 700;
@@ -207,6 +220,21 @@ h2 {
 	font-weight: 800;
 	font-variation-settings: "wght" 750;
 	margin: 2.8rem 0 1.2rem;
+}
+
+.gradient-text {
+	background: linear-gradient(to right, #3668cc 50%, #7500ed 100%);
+	background-image: linear-gradient(
+		to right in oklab,
+		oklch(53.78% 0.2742 262.342) 0%,
+		oklch(53.78% 0.2742 262.342) 31% 31%,
+		oklch(53.78% 0.3063 293.163) 100%
+	);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: rgba(0, 0, 0, 0.15);
+	box-decoration-break: clone;
+	-webkit-box-decoration-break: clone;
 }
 
 h3 {
@@ -247,6 +275,11 @@ a[href]:active {
 	color: var(--text-color-link-active);
 }
 
+.intro,
+.what-happens {
+	border-bottom: 1px solid var(--subtle-border);
+}
+
 .steps {
 	list-style: none;
 	padding: 0;
@@ -269,7 +302,7 @@ a[href]:active {
 }
 
 .step-when {
-	font-size: var(--font-size-sm);
+	font-size: var(--font-size-md);
 	font-variant-caps: all-small-caps;
 	letter-spacing: 0.08rem;
 	font-weight: var(--font-weight-bold);
@@ -284,22 +317,54 @@ a[href]:active {
 
 .steps p:last-child {
 	margin-bottom: 0;
-	font-family: var(--font-family-serif);
-	font-style: italic;
 }
 
 .fit {
 	display: grid;
 	gap: 0.5rem 2.5rem;
+	background: var(--color-aside);
+	border-radius: var(--border-radius);
+	padding: 1.2rem 1rem 1.6rem;
+	margin: 1.6rem 0 0;
+}
+
+.fit h2 {
+	margin: 0 0 0.8rem;
+	font-size: var(--font-size-md);
+	font-weight: 700;
+	font-variation-settings: "wght" 700;
+	font-variant-caps: all-small-caps;
+	letter-spacing: 0.08rem;
+	color: var(--color-midnight-60);
+}
+
+.fit section + section h2 {
+	margin-top: 1.6rem;
+}
+
+.fit ul {
+	margin-bottom: 0;
+	padding-inline-start: 1.25em;
+}
+
+.fit li:last-child {
+	margin-bottom: 0;
 }
 
 @media screen and (min-width: 650px) {
 	.fit {
 		grid-template-columns: 1fr 1fr;
+		padding: 1.8rem 1.6rem 2rem;
+		gap: 1rem 2.5rem;
 	}
 
-	.fit h2 {
-		margin-top: 2.8rem;
+	.fit section + section h2 {
+		margin-top: 0;
+	}
+
+	.fit li {
+		line-height: 1.35;
+		margin-bottom: 0.5rem;
 	}
 }
 

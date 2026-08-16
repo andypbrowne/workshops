@@ -1,9 +1,17 @@
 /** @param {import('@11ty/eleventy').UserConfig} eleventyConfig */
 module.exports = function (eleventyConfig) {
+	const fs = require("fs");
+	const path = require("path");
+
 	eleventyConfig.addPassthroughCopy({
-		"./public/": "/",
+		"./public/fonts": "/fonts",
+		"./public/img": "/img",
+		"./public/robots.txt": "/robots.txt",
 	});
 	eleventyConfig.addWatchTarget("./public/css/");
+	eleventyConfig.addShortcode("inlinedCss", () =>
+		fs.readFileSync(path.join(__dirname, "public/css/index.css"), "utf8"),
+	);
 
 	eleventyConfig.setBrowserSyncConfig({
 		callbacks: {
