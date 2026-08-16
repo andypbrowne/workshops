@@ -165,6 +165,16 @@ a.skip-link:focus-visible {
 	outline-offset: 2px;
 }
 
+.sr-only {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
 header {
 	padding: 0.2rem 0 2rem;
 }
@@ -227,7 +237,7 @@ h1 {
 
 h2 {
 	font-family: var(--font-family);
-	font-size: var(--font-size-lg);
+	font-size: var(--font-size-md);
 	font-weight: 800;
 	font-variation-settings: "wght" 750;
 	margin: 2.8rem 0 1.2rem;
@@ -300,6 +310,7 @@ a[href]:active {
 	margin: 0 0 1.25rem;
 	display: grid;
 	gap: 1rem;
+	color: var(--color-midnight-60);
 }
 
 .steps > li {
@@ -338,6 +349,7 @@ a[href]:active {
 	border-radius: var(--border-radius);
 	padding: var(--panel-padding);
 	margin: 1.6rem 0 0;
+	color: var(--color-midnight-60);
 }
 
 .fit h2 {
@@ -480,7 +492,7 @@ a.action-pill:focus-visible {
 }
 
 .deeper {
-	margin: 2.8rem 0 0;
+	margin: 2.8rem 0 var(--space-3);
 }
 
 .deeper ul {
