@@ -235,6 +235,8 @@ h2 {
 	-webkit-text-fill-color: rgba(0, 0, 0, 0.15);
 	box-decoration-break: clone;
 	-webkit-box-decoration-break: clone;
+	padding-inline-end: 0.15em;
+	margin-inline-end: -0.15em;
 }
 
 h3 {
