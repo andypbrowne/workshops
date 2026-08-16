@@ -309,13 +309,17 @@ a[href]:active {
 	border-radius: var(--border-radius);
 }
 
+.step-when,
+.steps h3 {
+	color: var(--color-midnight-60);
+}
+
 .step-when {
 	font-size: var(--font-size-md);
 	font-variant-caps: all-small-caps;
 	letter-spacing: 0.08rem;
 	font-weight: var(--font-weight-bold);
 	margin: 0 0 0.5rem;
-	color: var(--color-midnight-60);
 }
 
 .steps h3 {
@@ -420,6 +424,16 @@ a[href]:active {
 .cta {
 	margin: 2.8rem 0 2rem;
 	padding-bottom: var(--space-3);
+}
+
+.cta-caption {
+	margin: 0.6rem 0 0;
+	max-width: 22rem;
+	font-family: var(--font-family);
+	font-style: italic;
+	font-size: var(--font-size-sm);
+	line-height: 1.4;
+	color: var(--color-midnight-60);
 }
 
 a.action-pill {
