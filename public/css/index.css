@@ -79,6 +79,13 @@
 	--text-color-link-visited: #551a8b;
 	--subtle-border: #2b3e513a;
 	--border-radius: 10px;
+
+	--space-1: 0.5rem;
+	--space-2: 1rem;
+	--space-3: 1.5rem;
+	--space-4: 2rem;
+	--space-5: 3rem;
+	--panel-padding: var(--space-2);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -165,6 +172,10 @@ header {
 @media screen and (min-width: 650px) {
 	header {
 		padding: 2rem 0;
+	}
+
+	:root {
+		--panel-padding: var(--space-3);
 	}
 }
 
@@ -278,7 +289,8 @@ a[href]:active {
 }
 
 .intro,
-.what-happens {
+.what-happens,
+.cta {
 	border-bottom: 1px solid var(--subtle-border);
 }
 
@@ -292,15 +304,9 @@ a[href]:active {
 
 .steps > li {
 	margin: 0;
-	padding: 1.2rem 1rem 1.4rem;
+	padding: var(--panel-padding);
 	background: var(--color-aside);
 	border-radius: var(--border-radius);
-}
-
-@media screen and (min-width: 650px) {
-	.steps > li {
-		padding: 1.6rem 1.5rem 1.8rem;
-	}
 }
 
 .step-when {
@@ -326,7 +332,7 @@ a[href]:active {
 	gap: 0.5rem 2.5rem;
 	background: var(--color-aside);
 	border-radius: var(--border-radius);
-	padding: 1.2rem 1rem 1.6rem;
+	padding: var(--panel-padding);
 	margin: 1.6rem 0 0;
 }
 
@@ -356,7 +362,6 @@ a[href]:active {
 @media screen and (min-width: 650px) {
 	.fit {
 		grid-template-columns: 1fr 1fr;
-		padding: 1.8rem 1.6rem 2rem;
 		gap: 1rem 2.5rem;
 	}
 
@@ -372,6 +377,7 @@ a[href]:active {
 
 .cta {
 	margin: 2.8rem 0 2rem;
+	padding-bottom: var(--space-3);
 }
 
 a.action-pill {
