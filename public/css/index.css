@@ -417,9 +417,51 @@ a.action-pill:focus-visible {
 	}
 }
 
-.quiet {
-	font-size: var(--font-size-sm);
-	margin-bottom: 3rem;
+.deeper {
+	margin: 2.8rem 0 0;
+}
+
+.deeper ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	gap: 1.4rem;
+}
+
+.deeper li {
+	margin: 0;
+}
+
+.deeper a {
+	display: flex;
+	flex-direction: column;
+	gap: 0.6rem;
+	font-weight: 650;
+	font-variation-settings: "wght" 650;
+	text-decoration: none;
+	min-height: 44px;
+}
+
+.deeper a:hover,
+.deeper a:active {
+	text-decoration: underline;
+	text-underline-offset: 0.2em;
+}
+
+.deeper img {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+	border-radius: var(--border-radius);
+}
+
+@media screen and (min-width: 650px) {
+	.deeper ul {
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: 1rem;
+	}
 }
 
 footer {
