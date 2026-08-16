@@ -9,4 +9,8 @@ module.exports = {
 		url: "https://andypbrowne.com/about/",
 	},
 	linkedin: "https://www.linkedin.com/in/andypbrowne",
+	ogImage: "/img/OG/thumb-workshops.png",
+	ogImageWidth: 1024,
+	ogImageHeight: 506,
+	ogImageAlt: "You leave with a decision the same day.",
 };
