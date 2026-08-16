@@ -320,7 +320,8 @@ a[href]:active {
 
 .intro,
 .what-happens,
-.cta {
+.cta,
+.deeper {
 	border-bottom: 1px solid var(--subtle-border);
 }
 
@@ -501,6 +502,15 @@ a.action-pill:focus-visible {
 
 .deeper {
 	margin: 2.8rem 0 var(--space-3);
+	padding-bottom: var(--space-3);
+}
+
+.closing {
+	margin: 0 0 var(--space-3);
+}
+
+.closing p {
+	margin-bottom: 0;
 }
 
 .deeper ul {
