@@ -67,7 +67,7 @@
 	--swatch-5: var(--swatch);
 	--swatch-6: color-mix(in oklab, var(--swatch) 80%, black);
 	--swatch-7: color-mix(in oklab, var(--swatch) 60%, black);
-	--swatch-8: color-mix(in oklab, var(--swatch) 40%, black);
+	--swatch-8: color-mix(in oklab, var(--swatch) 26%, black);
 	--swatch-9: color-mix(in oklab, var(--swatch) 20%, black);
 
 	--color-base-bg: var(--swatch-1);
@@ -310,7 +310,6 @@ a[href]:active {
 	margin: 0 0 1.25rem;
 	display: grid;
 	gap: 1rem;
-	color: var(--color-midnight-60);
 }
 
 .steps > li {
@@ -318,11 +317,6 @@ a[href]:active {
 	padding: var(--panel-padding);
 	background: var(--color-aside);
 	border-radius: var(--border-radius);
-}
-
-.step-when,
-.steps h3 {
-	color: var(--color-midnight-60);
 }
 
 .step-when {
@@ -349,7 +343,6 @@ a[href]:active {
 	border-radius: var(--border-radius);
 	padding: var(--panel-padding);
 	margin: 1.6rem 0 0;
-	color: var(--color-midnight-60);
 }
 
 .fit h2 {
@@ -359,7 +352,6 @@ a[href]:active {
 	font-variation-settings: "wght" 700;
 	font-variant-caps: all-small-caps;
 	letter-spacing: 0.08rem;
-	color: var(--color-midnight-60);
 }
 
 .fit section + section h2 {
@@ -445,7 +437,7 @@ a[href]:active {
 	font-style: italic;
 	font-size: var(--font-size-sm);
 	line-height: 1.4;
-	color: var(--color-midnight-60);
+	color: var(--text-color);
 }
 
 a.action-pill {
